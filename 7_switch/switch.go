@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
-
+import (
+	"fmt"
+)
 
 func main() {
 	// i := 5
@@ -30,19 +31,19 @@ func main() {
 
 	// type switch
 
-	whoAmI := func(i interface{}) {
-		switch t := i.(type) {
+	funcTest := func(i interface{}) {
+		switch i.(type) {
 		case int:
 			fmt.Println("it's an integer")
-		case string:
-			fmt.Println("it's a string")
+		case float32, float64:
+			fmt.Println("it's an float")
 		case bool:
 			fmt.Println("it's a boolean")
 		default:
-			fmt.Println("Others", t)
+			fmt.Println("this might be a string or other datatypes")
 		}
 	}
 
-	whoAmI(6)
+	funcTest(5.600)
 
 }
